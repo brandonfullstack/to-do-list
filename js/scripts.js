@@ -15,16 +15,6 @@ ToDoList.prototype.assignId = function() {
   return this.currentId;
 };
 
-// Tests for above ^^^
-
-// let toDoList = new ToDoList();
-// let task = new Task("Wash car", "Sunday", "Done")
-// let task2 = new Task("Go shopping", "Monday", "Not done")
-// toDoList.addTask(task);
-// toDoList.addTask(task2);
-
-// console.log(toDoList);
-
 ToDoList.prototype.findTask = function(id) {
   if (this.tasks[id] !== undefined) {
     return this.tasks[id];
@@ -50,7 +40,7 @@ Task.prototype.toDoItem = function() {
   return this.description + " " + "before" + " " + this.dueDate;
 }
 
-// User Interface Logic ---------
+// User Interface Logic ------------------
 let toDoList = new ToDoList();
 
 function listTasks(toDoListToDisplay) {

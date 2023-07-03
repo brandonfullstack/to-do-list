@@ -10,47 +10,49 @@
 
 // }
 
-
 class Book {
-  constructor(cover) {
+  constructor(cover: string) {
     this.cover = cover;
   }
-  cover;
+  cover: string;
 }
 
 class AddressBook extends Book {
-  constructor(hasCalendar) {
-    super()
+  constructor(hasCalendar: boolean, coverType: string) {
+    super(coverType)
     this.hasCalendar = hasCalendar
   }
-  addContact(contact) {
+  addContact(contact: Contact) {
     this.contacts.push(contact)
   }
 
   getContacts() {
     return this.contacts
   }
-  hasCalendar;
-  contacts = []
+  hasCalendar: boolean;
+  contacts: Contact[] = []
 }
 
 class Contact {
-  constructor(name, lastName, age) {
+  constructor(name: string, lastName: string, age: number) {
     this.name = name;
     this.lastName = lastName;
     this.age = age;
   }
-  name;
-  lastName;
-  age;
+  name: string;
+  lastName: string;
+  age: number;
+  isCool: boolean = false;
 }
 
-const addressBook = new AddressBook(true)
-const NorwoodFam = new Contact({Sean, Laura})
+const addressBook = new AddressBook(true, "hardcover")
+
 const Sean = new Contact("Sean", "Norwood", 36)
 const Laura = new Contact("Laura","Norwood", 34)
+
 addressBook.addContact(Sean)
 addressBook.addContact(Laura)
+
 
 console.log(addressBook.contacts)
 
